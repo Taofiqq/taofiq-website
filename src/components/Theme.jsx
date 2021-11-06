@@ -6,9 +6,9 @@ export const lightTheme = {
   textRgba: "0,0,0",
 };
 export const darkTheme = {
-  body: "black",
-  text: "FCF6F4",
+  body: "#000000",
+  text: "white",
   fontFamily: "'Work Sans', sans-serif",
-  bodyRgba: "252, 246, 244",
-  textRgba: "0,0,0",
+  textRgba: "252, 246, 244",
+  bodyRgba: "0,0,0",
 };

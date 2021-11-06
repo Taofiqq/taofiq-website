@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Link } from "../data/BlogData";
 import { SiChainlink } from "react-icons/si";
 
-const AnchorComponent = () => {
+const AnchorComponent = (props) => {
   const ref = useRef(null);
-  //   const hiddenRef = useRef(null);
+  const hiddenRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +15,12 @@ const AnchorComponent = () => {
       let diff = Math.max(bodyHeight - (scrollPosition + windowSize));
       let diffP = (diff * 100) / (bodyHeight - windowSize);
       ref.current.style.transform = `translateY(${-diffP}%)`;
+
+      if (window.pageYOffset > 5) {
+        hiddenRef.current.style.display = "none";
+      } else {
+        hiddenRef.current.style.display = "block";
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -23,8 +29,11 @@ const AnchorComponent = () => {
   }, []);
   return (
     <Container>
+      <PreDisplay ref={hiddenRef} className="hidden">
+        <SiChainlink className="draw" />
+      </PreDisplay>
       <Slider ref={ref}>
-        {[...Array(25)].map((x, i) => {
+        {[...Array(props.numbers)].map((x, i) => {
           return (
             <Link
               key={i}
@@ -36,7 +45,6 @@ const AnchorComponent = () => {
           );
         })}
         {/* <Anchor width={70} height={70} fill="currentColor" /> */}
-        <SiChainlink className="draw" />
       </Slider>
     </Container>
   );
@@ -54,7 +62,7 @@ const Slider = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
 
   .chain {
     transform: rotate(135deg);
@@ -63,6 +71,12 @@ const Slider = styled.div`
   .draw {
     font-size: 3rem;
   }
+`;
+
+const PreDisplay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 2rem;
 `;
 
 export default AnchorComponent;

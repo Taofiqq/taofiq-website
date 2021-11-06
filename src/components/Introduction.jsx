@@ -6,7 +6,7 @@ const Introduction = () => {
     <Box
       initial={{ height: 0 }}
       animate={{ height: "55vh" }}
-      transition={{ type: "spring", duration: 2, delay: 1 }}
+      transition={{ type: "tween", duration: 2, delay: 1 }}
     >
       <BoxContainer>
         <Text

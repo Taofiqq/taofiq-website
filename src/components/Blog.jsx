@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import blogImg from "../resource/img/blog.jpg";
 import HomeButton from "../subComponents/Home";
@@ -6,15 +7,22 @@ import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import { Blogs } from "../data/BlogData";
 import BlogComponent from "./BlogComponents";
 import AnchorComponent from "./Anchor";
+import BigTitle from "../subComponents/BigTitle";
 
 const Blog = () => {
+  const [numbers, setNumbers] = useState(0);
+
+  useEffect(() => {
+    let num = (window.innerHeight - 70) / 30;
+    setNumbers(parseInt(num));
+  }, []);
   return (
     <MainContainer>
       <Container>
         <Logo />
         <HomeButton />
         <SocialMediaIcons />
-        <AnchorComponent />
+        <AnchorComponent numbers={numbers} />
         <Center>
           <Grid>
             {Blogs.map((blog) => {
@@ -22,6 +30,8 @@ const Blog = () => {
             })}
           </Grid>
         </Center>
+
+        <BigTitle text="BLOGS" top="10%" left="5%" />
       </Container>
     </MainContainer>
   );

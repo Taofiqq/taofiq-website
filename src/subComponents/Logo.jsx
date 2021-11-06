@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
 `;
 const LogoStyled = styled.h1`
-  color: ${(props) => (props.click ? "#FDFCE5" : "black")};
+  color: ${(props) => (props.click ? "white" : "black")};
   display: inline-block;
   font-family: "Dancing Script", cursive;
   top: 1rem;

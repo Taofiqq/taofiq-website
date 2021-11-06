@@ -24,7 +24,7 @@ const Main = () => {
 
         <Center click={click}>
           <SiElasticcloud className="icon" onClick={() => handleClick()} />
-          <span>Wanna know More? Click Here</span>
+          <span>Click here for some little intro 😇</span>
         </Center>
 
         <Contact
@@ -42,19 +42,19 @@ const Main = () => {
           </motion.h3>
         </Blog>
 
-        <Projects target="_blank" to={{ pathname: "/projects" }} click={click}>
+        <Projects to={{ pathname: "/projects" }} click={click}>
           <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             Projects
           </motion.h3>
         </Projects>
 
         <BottomBar>
-          <About target="_blank" to={{ pathname: "/about" }} click={click}>
+          <About to={{ pathname: "/about" }} click={click}>
             <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               About
             </motion.h3>
           </About>
-          <Stacks target="_blank" to={{ pathname: "/skills" }}>
+          <Stacks to={{ pathname: "/skills" }}>
             <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               Stacks
             </motion.h3>
