@@ -6,11 +6,28 @@ import Home from "../subComponents/Home";
 import ParticlesComponent from "../subComponents/Particles";
 import spaceman from "../resource/img/spaceman.png";
 import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+  transition: {
+    staggerChildren: 0.5,
+    duration: 0.5,
+  },
+};
 
 const About = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box>
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
         <Logo theme="light" />
         <SocialMediaIcons theme="light" />
         <Home />
@@ -33,7 +50,7 @@ const About = () => {
   );
 };
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   position: relative;

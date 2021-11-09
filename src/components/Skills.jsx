@@ -6,11 +6,27 @@ import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import Home from "../subComponents/Home";
 import ParticlesComponent from "../subComponents/Particles";
 import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+  transition: {
+    staggerChildren: 0.5,
+    duration: 0.5,
+  },
+};
 const Skills = () => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
         <Logo />
         <SocialMediaIcons />
         <Home />
@@ -54,7 +70,7 @@ const Skills = () => {
   );
 };
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   position: relative;

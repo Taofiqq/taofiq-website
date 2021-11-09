@@ -31,31 +31,86 @@ const Main = () => {
           target="_blank"
           to={{ pathname: "mailto:taofiqaiyelabegan45@gmail.com" }}
         >
-          <motion.h4 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h4
+            initial={{
+              x: 200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              x: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Say Hi to me...
           </motion.h4>
         </Contact>
 
         <Blog to={{ pathname: "/blog" }}>
-          <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h3
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Blog
           </motion.h3>
         </Blog>
 
         <Projects to={{ pathname: "/projects" }} click={click}>
-          <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h3
+            initial={{
+              y: 2300,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Projects
           </motion.h3>
         </Projects>
 
         <BottomBar>
           <About to={{ pathname: "/about" }} click={click}>
-            <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.h3
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               About
             </motion.h3>
           </About>
           <Stacks to={{ pathname: "/skills" }}>
-            <motion.h3 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.h3
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               Stacks
             </motion.h3>
           </Stacks>

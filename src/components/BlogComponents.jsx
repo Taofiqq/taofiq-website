@@ -1,19 +1,38 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
+const Item = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "Inertia",
+      duration: 0.5,
+    },
+  },
+};
 const BlogComponent = ({ blog }) => {
   return (
-    <BlogBox target="_blank" t0={{ pathname: blog.link }}>
-      <Image src={blog.imgSrc} />
-      <Title>{blog.name}</Title>
-      <Hashtags>
-        {blog.tags.map((t, id) => {
-          return <Hashtag key={id}>#{t}</Hashtag>;
-        })}
-      </Hashtags>
-      <Date>{blog.date} </Date>
-    </BlogBox>
+    <Container variants={Item}>
+      <BlogBox target="_blank" to={{ pathname: blog.link }}>
+        <Image src={blog.imgSrc} />
+        <Title>{blog.name}</Title>
+        <Hashtags>
+          {blog.tags.map((t, id) => {
+            return <Hashtag key={id}>#{t}</Hashtag>;
+          })}
+        </Hashtags>
+        <Date>{blog.date} </Date>
+      </BlogBox>
+    </Container>
   );
 };
-const BlogBox = styled.div`
+
+const Container = styled(motion.div)``;
+
+const BlogBox = styled(motion(NavLink))`
   height: 20rem;
   padding: 1rem;
   text-decoration: none;
