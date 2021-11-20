@@ -93,12 +93,14 @@ const Icons = styled.div`
   }
 `;
 const IconsWrapper = styled(NavLink)`
-  color: ${(props) => (props.click ? "white" : "black")};
+  /* color: ${(props) => (props.click ? "white" : "black")}; */
+  color: ${(props) => props.theme.text};
 `;
 const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
-  background-color: ${(props) => (props.click ? "#D9CAB3" : "black")}; ;
+  /* background-color: ${(props) => (props.click ? "#D9CAB3" : "black")}; */
+  background-color: ${(props) => props.theme.text};
 `;
 
 export default SocialMediaIcons;

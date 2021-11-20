@@ -38,11 +38,13 @@ const About = () => {
         </Spaceman>
 
         <Main>
-          lorem20fjdiiiiiiiiiiiiiiiiiiii
-          <br />
-          lorem20fjdiiiiiiiiiiiiiiiiiiii
-          <br />
-          lorem20fjdiiiiiiiiiiiiiiiiiiii
+          Hello, I am a front end developer, and I create innovative, modern and
+          responsive websites. <br /> I work on codes I touch to be more
+          readable, performant and accessible than it was given to me. Aside
+          from coding, I am also passionate about blogging and sharing the
+          knowledge I gained with the dev community. I value the expertise to
+          contribute to web development performance and help fellow developers
+          improve their skills, as I have also gained a lot from others.
         </Main>
         <BigTitle text="ABOUT" left="13%" top="-9%" />
       </Box>

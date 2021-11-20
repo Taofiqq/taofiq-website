@@ -14,9 +14,13 @@ const Introduction = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <h1>Hi, 👋🏿</h1>
-          <h3>My Name is Taofiq</h3>
-          <h6>I code simple yet beautiful websites</h6>
+          <Hi>Hi, 👋🏿</Hi>
+          <Para1>
+            I'm Taofiq, a freelance Front End Developer based in Malaysia.
+          </Para1>
+          <Para2>
+            I develop the user interfaces of the website and applications.
+          </Para2>
         </Text>
       </BoxContainer>
       <BoxContainer>
@@ -74,10 +78,25 @@ const Text = styled(motion.div)`
   flex-direction: column;
   justify-content: space-evenly;
 
-  & > *:last-child {
+  /* & > *:last-child {
     color: grey;
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300px;
-  }
+  } */
 `;
+
+const Hi = styled.h1`
+  font-size: 2rem;
+  font-weight: 300;
+`;
+const Para1 = styled.h1`
+  font-size: 2rem;
+  font-weight: 300;
+`;
+const Para2 = styled.h1`
+  font-size: 2rem;
+  font-weight: 300;
+  color: #e0c097;
+`;
+
 export default Introduction;

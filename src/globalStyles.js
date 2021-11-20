@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
 
      h2, h3, h4, h5, h6 {
         display: inline-block;
-        /* font-family: "Dancing Script", cursive; */
         font-family: 'Work Sans', sans-serif;
     }
 

@@ -13,7 +13,8 @@ const Container = styled.div`
   display: flex;
 `;
 const LogoStyled = styled.h1`
-  color: ${(props) => (props.click ? "white" : "black")};
+  color: ${(props) => props.theme.text};
+  /* color: ${(props) => (props.click ? "white" : "black")}; */
   display: inline-block;
   font-family: "Dancing Script", cursive;
   top: 1rem;
@@ -22,11 +23,11 @@ const LogoStyled = styled.h1`
   z-index: 5;
 `;
 const Image = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   position: fixed;
   left: 7rem;
-  top: 0.5rem;
+  top: 1rem;
   z-index: 3;
 `;
 export default Logo;

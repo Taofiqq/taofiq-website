@@ -4,88 +4,59 @@ import styled, { keyframes } from "styled-components";
 import HomeButton from "../subComponents/Home";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
-import { SiElasticcloud } from "react-icons/si";
+import { ImSpinner9 } from "react-icons/im";
 import Introduction from "./Introduction";
 import { motion } from "framer-motion";
+import ToggleMode from "../subComponents/ToggleMode";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./Theme";
 
 const Main = () => {
   const [click, setClick] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   const handleClick = () => {
     setClick(!click);
   };
   return (
-    <MainContainer>
-      <Container>
-        <HomeButton />
-        <Logo click={click} />
-        <SocialMediaIcons click={click} />
-        <DarkDiv click={click} />
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <MainContainer>
+        <Container>
+          <HomeButton />
+          <Logo click={click} />
+          <SocialMediaIcons click={click} />
+          <ToggleMode theme={theme} setTheme={setTheme} />
+          <DarkDiv click={click} />
 
-        <Center click={click}>
-          <SiElasticcloud className="icon" onClick={() => handleClick()} />
-          <span>Click here for some little intro 😇</span>
-        </Center>
+          <Center click={click}>
+            <ImSpinner9 className="icon" onClick={() => handleClick()} />
+            <span>Click here for some little intro 😇</span>
+          </Center>
 
-        <Contact
-          target="_blank"
-          to={{ pathname: "mailto:taofiqaiyelabegan45@gmail.com" }}
-        >
-          <motion.h4
-            initial={{
-              x: 200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              x: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <Contact
+            target="_blank"
+            to={{ pathname: "mailto:taofiqaiyelabegan45@gmail.com" }}
           >
-            Say Hi to me...
-          </motion.h4>
-        </Contact>
+            <motion.h4
+              initial={{
+                x: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                x: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Say Hi to me...
+            </motion.h4>
+          </Contact>
 
-        <Blog to={{ pathname: "/blog" }}>
-          <motion.h3
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Blog
-          </motion.h3>
-        </Blog>
-
-        <Projects to={{ pathname: "/projects" }} click={click}>
-          <motion.h3
-            initial={{
-              y: 2300,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Projects
-          </motion.h3>
-        </Projects>
-
-        <BottomBar>
-          <About to={{ pathname: "/about" }} click={click}>
+          <Blog to={{ pathname: "/blog" }}>
             <motion.h3
               initial={{
-                y: 200,
+                y: -200,
                 transition: { type: "spring", duration: 1.5, delay: 1 },
               }}
               animate={{
@@ -95,13 +66,14 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              About
+              Blog
             </motion.h3>
-          </About>
-          <Stacks to={{ pathname: "/skills" }}>
+          </Blog>
+
+          <Projects to={{ pathname: "/projects" }} click={click}>
             <motion.h3
               initial={{
-                y: 200,
+                y: 2300,
                 transition: { type: "spring", duration: 1.5, delay: 1 },
               }}
               animate={{
@@ -111,13 +83,48 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Stacks
+              Projects
             </motion.h3>
-          </Stacks>
-        </BottomBar>
-      </Container>
-      {click ? <Introduction click={click} /> : null}
-    </MainContainer>
+          </Projects>
+
+          <BottomBar>
+            <About to={{ pathname: "/about" }} click={click}>
+              <motion.h3
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                About
+              </motion.h3>
+            </About>
+            <Stacks to={{ pathname: "/skills" }}>
+              <motion.h3
+                initial={{
+                  y: 200,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                animate={{
+                  y: 0,
+                  transition: { type: "spring", duration: 1.5, delay: 1 },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Stacks
+              </motion.h3>
+            </Stacks>
+          </BottomBar>
+        </Container>
+        {click ? <Introduction click={click} /> : null}
+      </MainContainer>
+    </ThemeProvider>
   );
 };
 
@@ -127,6 +134,7 @@ const MainContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
+  transition: all 0.9s;
 
   h2,
   h3,
@@ -143,14 +151,14 @@ const Container = styled.div`
 `;
 
 const Contact = styled(NavLink)`
-  color: black;
+  color: ${(props) => props.theme.text};
   position: absolute;
-  top: 2rem;
+  top: 3rem;
   right: calc(1rem + 2vw);
   z-index: 1;
 `;
 const Blog = styled(NavLink)`
-  color: black;
+  color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
   right: calc(1rem + 2vw);
@@ -159,7 +167,7 @@ const Blog = styled(NavLink)`
   transform: rotate(90deg);
 `;
 const Projects = styled(NavLink)`
-  color: ${(props) => (props.click ? "white" : "black")};
+  color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
   left: 0rem;
@@ -176,12 +184,12 @@ const BottomBar = styled.div`
   justify-content: space-evenly;
 `;
 const About = styled(NavLink)`
-  color: ${(props) => (props.click ? "white" : "black")};
+  color: ${(props) => props.theme.text};
   text-decoration: none;
   z-index: 1;
 `;
 const Stacks = styled(NavLink)`
-  color: black;
+  color: ${(props) => props.theme.text};
   z-index: 1;
 `;
 const rotate = keyframes`
@@ -211,10 +219,12 @@ const Center = styled.button`
     width: 50px;
     height: 50px;
     animation: ${rotate} infinite 1.5s linear;
+    color: ${(props) => props.theme.text};
   }
   span {
     padding-top: 1rem;
     display: ${(props) => (props.click ? "none" : "inline-block")};
+    color: ${(props) => props.theme.text};
   }
 `;
 
