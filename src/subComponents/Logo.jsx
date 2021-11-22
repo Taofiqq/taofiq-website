@@ -1,15 +1,25 @@
 import styled from "styled-components";
 import taoMemoji from "../resource/img/taomemoji.png";
+import { motion } from "framer-motion";
 const Logo = (props) => {
   return (
-    <Container>
+    <Container
+      initial={{
+        x: -200,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+      animate={{
+        x: 0,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+    >
       <LogoStyled click={props.click}>Taofiq</LogoStyled>
       <Image src={taoMemoji} />
     </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
 `;
 const LogoStyled = styled.h1`

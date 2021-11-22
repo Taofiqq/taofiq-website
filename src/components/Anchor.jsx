@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "../data/BlogData";
+import { Link, Anchor } from "../data/BlogData";
 import { SiChainlink } from "react-icons/si";
 
 const AnchorComponent = (props) => {
@@ -12,8 +12,11 @@ const AnchorComponent = (props) => {
       let scrollPosition = window.pageYOffset;
       let windowSize = window.innerHeight;
       let bodyHeight = document.body.offsetHeight;
+
       let diff = Math.max(bodyHeight - (scrollPosition + windowSize));
+      //diff*100/scrollposition
       let diffP = (diff * 100) / (bodyHeight - windowSize);
+
       ref.current.style.transform = `translateY(${-diffP}%)`;
 
       if (window.pageYOffset > 5) {
@@ -23,9 +26,8 @@ const AnchorComponent = (props) => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <Container>
@@ -44,7 +46,7 @@ const AnchorComponent = (props) => {
             />
           );
         })}
-        {/* <Anchor width={70} height={70} fill="currentColor" /> */}
+        <Anchor width={70} height={70} fill="currentColor" />
       </Slider>
     </Container>
   );

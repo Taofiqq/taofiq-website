@@ -8,7 +8,7 @@ const Item = {
   show: {
     scale: 1,
     transition: {
-      type: "Inertia",
+      type: "spring",
       duration: 0.5,
     },
   },

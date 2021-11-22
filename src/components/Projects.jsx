@@ -6,7 +6,7 @@ import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import Home from "../subComponents/Home";
 import { portfolioData } from "../data/PortfolioData";
 import Card from "../subComponents/Card";
-import { SiElasticcloud } from "react-icons/si";
+import { ImSpinner9 } from "react-icons/im";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 
@@ -47,7 +47,7 @@ const About = () => {
         </Main>
 
         <Rotate ref={spinner}>
-          <SiElasticcloud className="icons" />
+          <ImSpinner9 className="icons" />
         </Rotate>
 
         <BigTitle text="WORK" top="-3%" right="20%" />

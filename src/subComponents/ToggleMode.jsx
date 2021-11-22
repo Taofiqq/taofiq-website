@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsFillSunFill, BsMoon } from "react-icons/bs";
+import { motion } from "framer-motion";
 const ToggleMode = ({ theme, setTheme }) => {
   const darkthemeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("dark");
@@ -8,7 +9,16 @@ const ToggleMode = ({ theme, setTheme }) => {
     theme === "dark" ? setTheme("light") : setTheme("light");
   };
   return (
-    <ButtonContainer>
+    <ButtonContainer
+      initial={{
+        y: -200,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+      animate={{
+        y: 0,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+    >
       <LightModeButton onClick={() => lightthemeToggle()}>
         <BsFillSunFill />
       </LightModeButton>
@@ -19,7 +29,7 @@ const ToggleMode = ({ theme, setTheme }) => {
   );
 };
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled(motion.div)`
   position: fixed;
   top: 2rem;
   left: 70%;

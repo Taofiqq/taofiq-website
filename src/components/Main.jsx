@@ -134,7 +134,7 @@ const MainContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
-  transition: all 0.9s;
+  transition: all 0.6s;
 
   h2,
   h3,

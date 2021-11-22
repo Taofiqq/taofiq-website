@@ -1,10 +1,20 @@
 import { FcHome } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const HomeButton = () => {
   return (
-    <HomeButtonStyled>
+    <HomeButtonStyled
+      initial={{
+        y: -200,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+      animate={{
+        y: 0,
+        transition: { type: "spring", duration: 1.5, delay: 1 },
+      }}
+    >
       <NavLink to="/">
         <FcHome className="homeButton" />
       </NavLink>
@@ -12,7 +22,7 @@ const HomeButton = () => {
   );
 };
 
-const HomeButtonStyled = styled.button`
+const HomeButtonStyled = styled(motion.button)`
   position: fixed;
   top: 2rem;
   left: 50%;

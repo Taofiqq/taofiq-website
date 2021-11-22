@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import blogImg from "../resource/img/blog.jpg";
+import blogImg from "../resource/img/blog.jpeg";
 import HomeButton from "../subComponents/Home";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
@@ -47,7 +47,7 @@ const Blog = () => {
           </Grid>
         </Center>
 
-        <BigTitle text="BLOGS" top="10%" left="5%" />
+        <BigTitle text="BLOGS" top="1%" left="5%" />
       </Container>
     </MainContainer>
   );

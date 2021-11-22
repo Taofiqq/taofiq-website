@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme } from "./Theme";
+import { lightTheme, darkTheme, mediaQueries } from "./Theme";
 import { BiLaptop, BiCodeAlt } from "react-icons/bi";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
@@ -20,7 +20,7 @@ const container = {
 };
 const Skills = () => {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <Box
         variants={container}
         initial="hidden"
@@ -30,7 +30,7 @@ const Skills = () => {
         <Logo />
         <SocialMediaIcons />
         <Home />
-        <ParticlesComponent theme="light" />
+        <ParticlesComponent theme="darkTheme" />
         <Main>
           <Title>
             <BiCodeAlt /> FrontEnd Developer
@@ -64,7 +64,7 @@ const Skills = () => {
             </ul>
           </Description>
         </Main>
-        <BigTitle title="SKILLS" top="10%" leftt="10%" />
+        <BigTitle title="SKILLS" top="10%" leftt="1%" />
       </Box>
     </ThemeProvider>
   );
@@ -77,7 +77,15 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) => props.theme.body};
+  ${mediaQueries(50)`
+            flex-direction:column;    
+            padding:8rem 0;
+height:auto;
+            &>*:nth-child(5){
+              margin-bottom:5rem;
+            }
+    `};
 `;
 
 const Main = styled.div`
@@ -97,7 +105,7 @@ const Main = styled.div`
 
   &:hover {
     color: white;
-    background-color: black;
+    background-color: #222831;
   }
 `;
 
