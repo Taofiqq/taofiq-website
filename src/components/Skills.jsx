@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, mediaQueries } from "./Theme";
+import { darkTheme, mediaQueries } from "./Theme";
 import { BiLaptop, BiCodeAlt } from "react-icons/bi";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
@@ -8,23 +8,23 @@ import ParticlesComponent from "../subComponents/Particles";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-  transition: {
-    staggerChildren: 0.5,
-    duration: 0.5,
-  },
-};
+// const container = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//   },
+//   transition: {
+//     staggerChildren: 0.5,
+//     duration: 0.5,
+//   },
+// };
 const Skills = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box
-        variants={container}
-        initial="hidden"
-        animate="show"
+        key="skills"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 1 } }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <Logo />
