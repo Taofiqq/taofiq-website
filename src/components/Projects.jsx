@@ -85,8 +85,8 @@ const Rotate = styled.span`
   color: white;
 
   .icons {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
   }
 `;
 
