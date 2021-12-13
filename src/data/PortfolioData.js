@@ -24,7 +24,7 @@ export const portfolioData = [
     name: "Crypbase",
     description:
       "A Cryptocurrency website build using React, Redux-toolkit, RTK-Query and ant-design",
-    tags: ["react", "redux", 'RTK-Query', 'rapidApi' "ant-design"],
+    tags: ["react", "redux", 'RTK-Query', 'rapidApi',  "ant-design"],
 
     demo: "https://crypbase.netlify.app",
     github: "https://github.com/Taofiqq/crypbase",
