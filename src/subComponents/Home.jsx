@@ -52,7 +52,7 @@ const HomeButtonStyled = styled(motion.button)`
   top: 3rem;
   left: 45%;
   `};
-  ${mediaQueries(40)`
+  ${mediaQueries(20)`
   top: 2.5rem;
   left: 45%;
   `};

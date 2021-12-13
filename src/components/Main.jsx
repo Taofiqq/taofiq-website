@@ -47,7 +47,7 @@ const Main = () => {
 
           <Center click={click}>
             <ImSpinner9 className="icon" onClick={() => handleClick()} />
-            <span>Click here </span>
+            <span>Quick Intro? </span>
           </Center>
 
           <Contact
@@ -205,8 +205,9 @@ const Contact = styled(NavLink)`
 const Blog = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
-  top: 50%;
-  right: calc(1rem + 2vw);
+  top: 47%;
+  /* right: calc(1rem + 2vw); */
+  right: 1rem;
   z-index: 1;
   transform: translate(-50%, -50%);
   transform: rotate(90deg);
@@ -215,13 +216,13 @@ const Projects = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
-  left: 0rem;
+  left: -1rem;
   z-index: 1;
   transform: rotate(90deg) translate(-50%, -50%);
 `;
 const BottomBar = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 3rem;
   left: 0;
   right: 0;
   width: 100%;

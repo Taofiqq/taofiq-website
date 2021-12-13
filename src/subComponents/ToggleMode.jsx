@@ -47,6 +47,7 @@ const LightModeButton = styled.button`
   background: transparent;
   color: ${(props) => props.theme.text};
   font-size: 1.2rem;
+  z-index: 10;
 
   ${mediaQueries(40)`
   font-size: .8rem;
@@ -54,6 +55,11 @@ const LightModeButton = styled.button`
   left: 63%;
   `};
 
+  ${mediaQueries(25)`
+  font-size: .8rem;
+  top: 1rem;
+  left: 51%;
+  `};
   ${mediaQueries(20)`
   font-size: .6rem;
   top: .6rem;
@@ -73,12 +79,18 @@ const DarkModeButton = styled.button`
   cursor: pointer;
   background: transparent;
   color: ${(props) => props.theme.text};
+  z-index: 10;
   font-size: 1.2rem;
 
   ${mediaQueries(40)`
   font-size: .8rem;
   top: 1rem;
   left: 68%;
+  `};
+  ${mediaQueries(25)`
+  font-size: .8rem;
+  top: 1rem;
+  left: 57%;
   `};
   ${mediaQueries(20)`
   font-size: .6rem;

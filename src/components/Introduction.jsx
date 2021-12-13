@@ -175,7 +175,7 @@ const BoxContainer = styled.div`
 
 const Text = styled(motion.div)`
   font-size: calc(1rem + 1.5vw);
-  color: black;
+  color: white;
   padding: 2rem;
   cursor: pointer;
   display: flex;
@@ -183,7 +183,7 @@ const Text = styled(motion.div)`
   justify-content: space-evenly;
 
   & > *:last-child {
-    color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
+    /* color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`}; */
 
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
@@ -219,7 +219,7 @@ const Para1 = styled.h1`
 const Para2 = styled.h6`
   font-size: 1rem;
   font-weight: 300;
-  color: red;
+  color: white;
 `;
 
 export default Introduction;
