@@ -2,6 +2,7 @@ import { FcHome } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { mediaQueries } from "./mediaQueries";
 
 const HomeButton = () => {
   return (
@@ -38,7 +39,23 @@ const HomeButtonStyled = styled(motion.button)`
 
   .homeButton {
     font-size: 2rem;
+
+    ${mediaQueries(40)`
+    width:20px;
+        height:20px;
+  `};
   }
+
+  ${mediaQueries(40)`
+   width: 2rem;
+  height: 2rem;
+  top: 3rem;
+  left: 45%;
+  `};
+  ${mediaQueries(40)`
+  top: 2.5rem;
+  left: 45%;
+  `};
 `;
 
 export default HomeButton;

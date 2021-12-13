@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { BsFillSunFill, BsMoon } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { mediaQueries } from "./mediaQueries";
 const ToggleMode = ({ theme, setTheme }) => {
   const darkthemeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("dark");
@@ -30,12 +31,13 @@ const ToggleMode = ({ theme, setTheme }) => {
 };
 
 const ButtonContainer = styled(motion.div)`
-  position: fixed;
-  top: 2rem;
-  left: 70%;
+  position: relative;
   display: flex;
 `;
 const LightModeButton = styled.button`
+  position: absolute;
+  top: 0.5rem;
+  left: 66%;
   border: none;
   width: 3rem;
   outline: none;
@@ -44,10 +46,25 @@ const LightModeButton = styled.button`
   cursor: pointer;
   background: transparent;
   color: ${(props) => props.theme.text};
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+
+  ${mediaQueries(40)`
+  font-size: .8rem;
+  top: 1rem;
+  left: 63%;
+  `};
+
+  ${mediaQueries(20)`
+  font-size: .6rem;
+  top: .6rem;
+  left: 53%;
+  `};
 `;
 
 const DarkModeButton = styled.button`
+  position: absolute;
+  top: 0.5rem;
+  left: 71%;
   border: none;
   width: 3rem;
   outline: none;
@@ -56,7 +73,18 @@ const DarkModeButton = styled.button`
   cursor: pointer;
   background: transparent;
   color: ${(props) => props.theme.text};
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+
+  ${mediaQueries(40)`
+  font-size: .8rem;
+  top: 1rem;
+  left: 68%;
+  `};
+  ${mediaQueries(20)`
+  font-size: .6rem;
+  top: .6rem;
+  left: 59%;
+  `};
 `;
 
 export default ToggleMode;

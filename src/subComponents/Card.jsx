@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { SiGithub } from "react-icons/si";
 import { motion } from "framer-motion";
+import { mediaQueries } from "./mediaQueries";
 const Card = (props) => {
   const { id, name, description, tags, demo, github } = props.data;
   return (
@@ -44,6 +45,40 @@ const Box = styled(motion.li)`
     color: white;
     border: 1px solid white;
   }
+
+  ${mediaQueries(50)`
+        width:16rem;
+        margin-right:6rem;
+        height:35vh;
+       
+
+  `};
+  ${mediaQueries(40)`
+        width:14rem;
+        margin-right:4rem;
+        height:35vh;
+        
+        
+
+  `};
+  ${mediaQueries(25)`
+        width:12rem;
+        margin-right:4rem;
+        height:35vh;
+padding:1.5rem 1.5rem;
+        
+        
+
+  `};
+  ${mediaQueries(20)`
+        width:10rem;
+        margin-right:4rem;
+        height:40vh;
+
+        
+        
+
+  `};
 `;
 
 const Title = styled.h2`
@@ -52,6 +87,19 @@ const Title = styled.h2`
 const Description = styled.h2`
   font-size: calc(0.8em +0.5vw);
   font-weight: 500;
+
+  ${mediaQueries(25)`
+  font-size:calc(0.7em + 0.3vw);
+
+
+
+  `};
+  ${mediaQueries(20)`
+  font-size:calc(0.6em + 0.3vw);
+
+
+
+  `};
 `;
 const Tags = styled.div`
   border-top: 1px solid black;
@@ -64,7 +112,12 @@ const Tags = styled.div`
   }
 `;
 const Tag = styled.span`
-  margin-right: 1rem; ;
+  margin-right: 1rem;
+  ${mediaQueries(25)`
+  font-size:calc(0.7em);
+
+
+  `};
 `;
 
 const Footer = styled.div`

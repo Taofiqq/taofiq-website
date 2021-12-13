@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import { mediaQueries } from "../subComponents/mediaQueries";
 const Item = {
   hidden: {
     scale: 0,
@@ -52,6 +53,24 @@ const BlogBox = styled(motion(NavLink))`
     background-color: black;
     transition: all 0.3s ease;
   }
+
+  ${mediaQueries(50)`
+    width:calc(60vw);
+
+  `};
+  ${mediaQueries(30)`
+    
+    height:18rem;
+
+  `};
+
+  ${mediaQueries(25)`
+    
+    height:14rem;
+    padding:0.8rem;
+    backdrop-filter: none;
+
+  `};
 `;
 
 const Image = styled.img`
@@ -62,6 +81,12 @@ const Image = styled.img`
   border: 1px solid transparent;
   background-position: center;
 
+  ${mediaQueries(25)`
+    
+    height:70%;
+
+
+  `};
   ${BlogBox}:hover & {
     border: 1px solid white;
   }
@@ -72,6 +97,19 @@ const Title = styled.h3`
   padding-top: 1rem;
   font-weight: 600;
   border-bottom: 1px solid black;
+
+  ${mediaQueries(40)`
+    font-size:calc(0.8em + 1vw);
+
+  `};
+
+  ${mediaQueries(25)`
+    
+    font-size:calc(0.6em + 1vw);
+
+
+
+  `};
 
   ${BlogBox}:hover & {
     border-bottom: 1px solid white;
@@ -86,5 +124,13 @@ const Hashtag = styled.span`
 `;
 const Date = styled.span`
   padding: 0.5rem 0;
+
+  ${mediaQueries(25)`
+    
+    font-size:calc(0.5em + 1vw);
+
+
+
+  `};
 `;
 export default BlogComponent;

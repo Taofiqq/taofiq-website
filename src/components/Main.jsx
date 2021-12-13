@@ -191,6 +191,16 @@ const Contact = styled(NavLink)`
   top: 3rem;
   right: calc(1rem + 2vw);
   z-index: 1;
+
+  ${mediaQueries(40)`
+      font-size: .62em;
+      top: 3.5rem;
+  `};
+  ${mediaQueries(20)`
+      font-size: .5em;
+      top: 3.1rem;
+      right: 1rem;
+  `};
 `;
 const Blog = styled(NavLink)`
   color: ${(props) => props.theme.text};

@@ -84,7 +84,7 @@ const Icons = styled.div`
   flex-direction: column;
   align-items: center;
   position: fixed;
-  left: 2.4rem;
+  left: 1.4rem;
   bottom: 0;
   z-index: 3;
   font-size: 1.3rem;
@@ -93,13 +93,11 @@ const Icons = styled.div`
   }
 `;
 const IconsWrapper = styled(NavLink)`
-  /* color: ${(props) => (props.click ? "white" : "black")}; */
   color: ${(props) => props.theme.text};
 `;
 const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
-  /* background-color: ${(props) => (props.click ? "#D9CAB3" : "black")}; */
   background-color: ${(props) => props.theme.text};
 `;
 
