@@ -24,7 +24,7 @@ export const portfolioData = [
     name: "Crypbase",
     description:
       "A Cryptocurrency website build using React, Redux-toolkit, RTK-Query and ant-design",
-    tags: ["react", "redux", 'RTK-Query', 'rapidApi',  "ant-design"],
+    tags: ["react", "redux", "RTK-Query", "rapidApi", "ant-design"],
 
     demo: "https://crypbase.netlify.app",
     github: "https://github.com/Taofiqq/crypbase",
@@ -32,9 +32,8 @@ export const portfolioData = [
   {
     id: 4,
     name: "React-Redux-Todo-App",
-    description:
-      "A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-    tags: ["react", "styledComponents", "react-router"],
+    description: "A To-do-List-App created using React and Redux Tool Kit. ",
+    tags: ["react", "redux", "redux-toolkit"],
 
     demo: "https://todo0-app.netlify.app",
     github: "https://github.com/Taofiqq/todo-list-app-redux",
@@ -43,20 +42,30 @@ export const portfolioData = [
     id: 5,
     name: "Covid-19 Tracker",
     description:
-      "A todo app build using Redux-toolkit and framer-motion for smooth animations.",
-    tags: ["react", "redux", "framer-motion"],
+      "Front End React Application using one of the Covid-19 API(s) to fetch data and using Material-UI to give styling to the app.",
+    tags: ["react", "material-ui"],
 
-    demo: "http://react-redux-todo-app-git-main-codebucks27.vercel.app/",
+    demo: "https://covid-19-trackeer.netlify.app",
     github: "https://github.com/Taofiqq/covid-19-tracker",
   },
   {
     id: 6,
     name: "Who Wants to Be A Millionaire",
     description:
-      "A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
-    tags: ["react", "react-router", "css"],
+      "A Front End React Application developed to replicate the famous old show of WWTBAM",
+    tags: ["react", "styled-components"],
 
-    demo: "http://react-responsive-navbar-codebucks27.vercel.app/",
+    demo: "https://millionairequiz.netlify.app",
     github: "https://github.com/Taofiqq/millionaire-quiz",
+  },
+  {
+    id: 7,
+    name: "Sneakers Store",
+    description:
+      "A sneakers shopping cart website built with ReactJS, MaterialUI and Typescript.",
+    tags: ["react", "typescript", "Material-UI"],
+
+    demo: "https://sneakerss.netlify.app",
+    github: "https://github.com/Taofiqq/react-typescript-sneakers-web",
   },
 ];
