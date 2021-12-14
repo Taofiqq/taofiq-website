@@ -82,10 +82,10 @@ padding:1.5rem 1.5rem;
 `;
 
 const Title = styled.h2`
-  font-size: calc(1em +0.5vw);
+  font-size: 1.2rem;
 `;
 const Description = styled.h2`
-  font-size: calc(0.8em +0.5vw);
+  font-size: 1rem;
   font-weight: 500;
 
   ${mediaQueries(25)`

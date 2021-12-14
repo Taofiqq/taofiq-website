@@ -43,7 +43,7 @@ const About = () => {
           })}
         </Main>
 
-        <Swipe>Swipe Up</Swipe>
+        <Swipe>Swipe/ Scroll Up</Swipe>
         <Rotate ref={spinner}>
           <ImSpinner9 className="icons" />
         </Rotate>
@@ -101,14 +101,14 @@ const Rotate = styled.span`
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   z-index: 1;
   color: white;
 
   .icons {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
 
     ${mediaQueries(40)`
      width:60px;
@@ -135,9 +135,9 @@ const Rotate = styled.span`
 const Swipe = styled.span`
   display: block;
   position: fixed;
-  right: 9rem;
-  bottom: 4rem;
-  /* color: red; */
+  right: 1.5rem;
+  bottom: 0rem;
+  color: white;
 `;
 const container = {
   hidden: { opacity: 0 },

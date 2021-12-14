@@ -30,7 +30,7 @@ const Introduction = () => {
             I'm Taofiq, a freelance Front End Developer based in Malaysia.
           </Para1>
           <Para2>
-            I develop the user interfaces of the website and applications.
+            I develop and build User Interfaces. Passionate about responsive website design and a firm believer in the mobile-first strategy while building web applications.
           </Para2>
         </Text>
       </BoxContainer>
@@ -185,7 +185,7 @@ const Text = styled(motion.div)`
   & > *:last-child {
     /* color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`}; */
 
-    font-size: calc(0.5rem + 1.5vw);
+    /* font-size: calc(0.5rem + 1.5vw); */
     font-weight: 300;
 
     ${mediaQueries(40)`
@@ -216,7 +216,7 @@ const Para1 = styled.h1`
   font-size: 1rem;
   font-weight: 300;
 `;
-const Para2 = styled.h6`
+const Para2 = styled.p`
   font-size: 1rem;
   font-weight: 300;
   color: white;
