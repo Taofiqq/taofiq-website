@@ -43,8 +43,9 @@ const About = () => {
           })}
         </Main>
 
+        <Swipe>Swipe Up</Swipe>
         <Rotate ref={spinner}>
-          Swipe Up <ImSpinner9 className="icons" />
+          <ImSpinner9 className="icons" />
         </Rotate>
 
         <BigTitle text="Projects" top="-3%" right="20%" />
@@ -131,6 +132,13 @@ const Rotate = styled.span`
   `};
 `;
 
+const Swipe = styled.span`
+  display: block;
+  position: fixed;
+  right: 9rem;
+  bottom: 4rem;
+  /* color: red; */
+`;
 const container = {
   hidden: { opacity: 0 },
   show: {

@@ -28,7 +28,7 @@ const Card = (props) => {
 
 const Box = styled(motion.li)`
   width: 16rem;
-  height: 40vh;
+  height: 43vh;
   background-color: white;
   color: black;
   padding: 1.5rem 2rem;
