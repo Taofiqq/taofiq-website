@@ -44,7 +44,7 @@ const About = () => {
         </Main>
 
         <Rotate ref={spinner}>
-          <ImSpinner9 className="icons" />
+          Swipe Up <ImSpinner9 className="icons" />
         </Rotate>
 
         <BigTitle text="Projects" top="-3%" right="20%" />
