@@ -1,6 +1,21 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, mediaQueries } from "./Theme";
 import { BiLaptop, BiCodeAlt } from "react-icons/bi";
+import { AiFillHtml5 } from "react-icons/ai";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiRedux,
+  SiTypescript,
+  SiMaterialui,
+  SiChakraui,
+  SiTailwindcss,
+  SiMongodb,
+  SiFastify,
+  SiExpress,
+} from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io";
+import { DiCss3 } from "react-icons/di";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import Home from "../subComponents/Home";
@@ -8,16 +23,6 @@ import ParticlesComponent from "../subComponents/Particles";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 
-// const container = {
-//   hidden: { opacity: 0 },
-//   show: {
-//     opacity: 1,
-//   },
-//   transition: {
-//     staggerChildren: 0.5,
-//     duration: 0.5,
-//   },
-// };
 const Skills = () => {
   return (
     <ThemeProvider theme={darkTheme}>
@@ -33,37 +38,77 @@ const Skills = () => {
         <ParticlesComponent theme="darkTheme" />
         <Main>
           <Title>
-            <BiCodeAlt /> FrontEnd Developer
+            <BiCodeAlt /> FrontEnd
           </Title>
-          <Description>lorem20fjdiiiiiiiiiiiiiiiiiiii</Description>
+
           <Description>
-            <strong>I love bulding modern, innovative websites using:</strong>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JS</li>
-              <li>ReactJS</li>
-              <li>StyledComponents</li>
-              <li>NextJs</li>
-            </ul>
+            <SkillContainer>
+              <span>HTML</span>
+              <AiFillHtml5 />
+            </SkillContainer>
+            <SkillContainer>
+              <span>CSS</span>
+              <DiCss3 />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Javascript</span>
+              <IoLogoJavascript />
+            </SkillContainer>
+            <SkillContainer>
+              <span>ReactJS</span>
+              <FaReact />
+            </SkillContainer>
+            <SkillContainer>
+              <span>NextJS</span>
+              <SiNextdotjs />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Redux</span>
+              <SiRedux />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Typescript</span>
+              <SiTypescript />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Material-UI</span>
+              <SiMaterialui />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Chakra-UI</span>
+              <SiChakraui />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Tailwind</span>
+              <SiTailwindcss />
+            </SkillContainer>
+          </Description>
+        </Main>
+        <Main>
+          <Title>
+            <BiLaptop /> Backend
+          </Title>
+
+          <Description>
+            <SkillContainer>
+              <span>NodeJS</span>
+              <FaNodeJs />
+            </SkillContainer>
+            <SkillContainer>
+              <span>MongoDB</span>
+              <SiMongodb />
+            </SkillContainer>
+            <SkillContainer>
+              <span>Fastify</span>
+              <SiFastify />
+            </SkillContainer>
+            <SkillContainer>
+              <span>ExpressJS</span>
+              <SiExpress />
+            </SkillContainer>
           </Description>
         </Main>
 
-        <Main>
-          <Title>
-            <BiLaptop /> Backend Developer
-          </Title>
-          <Description>lorem20fjdiiiiiiiiiiiiiiiiiiii</Description>
-          <Description>
-            <strong>I love bulding backend of a server using:</strong>
-            <ul>
-              <li>NodeJs</li>
-              <li>Express</li>
-              <li>Fastify</li>
-              <li>MongoDB</li>
-            </ul>
-          </Description>
-        </Main>
         <BigTitle title="SKILLS" top="10%" leftt="1%" />
       </Box>
     </ThemeProvider>
@@ -89,24 +134,35 @@ height:auto;
 `;
 
 const Main = styled.div`
-  border: 2px solid black;
+  /* border: 2px solid gray; */
   color: black;
   background-color: white;
   padding: 2rem;
   width: 30vw;
-  height: 60vh;
+  height: 65vh;
   z-index: 3;
   line-height: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center; */
   flex-direction: column;
   transition: all 0.3s ease;
   cursor: pointer;
+  border-radius: 1rem;
 
   &:hover {
     color: white;
     background-color: #222831;
   }
+
+  ${mediaQueries(60)`
+            height: 55vh;
+  `};
+
+  ${mediaQueries(50)`
+              width: 50vw;
+              height: max-content;
+
+  `};
 `;
 
 const Title = styled.h2`
@@ -114,6 +170,26 @@ const Title = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc (1em + 1vw);
+
+  ${mediaQueries(60)`
+          font-size:calc(0.8em + 1vw);
+  `};
+
+  ${mediaQueries(50)`
+          font-size:calc(1em + 2vw);
+          margin-bottom:1rem;
+  `};
+
+  ${mediaQueries(30)`
+                      font-size:calc(1em + 1vw);
+  `};
+  ${mediaQueries(25)`
+                      font-size:calc(0.8em + 1vw);
+                      svg{
+                        width:30px;
+                        height:30px;
+                      }
+  `};
   ${Main}:hover & {
     & > * {
       color: white;
@@ -132,6 +208,17 @@ const Description = styled.div`
     color: white;
   }
 
+  ${mediaQueries(50)`
+  font-size: calc(0.8em + 1vw);
+  `};
+
+  ${mediaQueries(30)`
+  font-size:calc(0.7em + 1vw);
+  `};
+
+  ${mediaQueries(25)`font-size:calc(0.5em + 1vw)
+  `};
+
   strong {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -139,6 +226,17 @@ const Description = styled.div`
 
   ul {
     margin-left: 2rem;
+  }
+`;
+
+const SkillContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  span {
+    /* margin-right: 2rem; */
   }
 `;
 export default Skills;
