@@ -43,6 +43,7 @@ const BlogBox = styled(motion(NavLink))`
   backdrop-filter: blur(2px);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  border-radius: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -52,6 +53,7 @@ const BlogBox = styled(motion(NavLink))`
     color: white;
     background-color: black;
     transition: all 0.3s ease;
+    border: 1px solid white;
   }
 
   ${mediaQueries(50)`

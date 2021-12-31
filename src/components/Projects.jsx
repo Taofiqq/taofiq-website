@@ -4,6 +4,7 @@ import { darkTheme } from "./Theme";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import Home from "../subComponents/Home";
+// import Button from "../subComponents/Button";
 import { portfolioData } from "../data/PortfolioData";
 import Card from "../subComponents/Card";
 import { ImSpinner9 } from "react-icons/im";
@@ -11,7 +12,24 @@ import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 import { mediaQueries } from "../subComponents/mediaQueries";
 
+// const buttonCategories = ["All", ...portfolioData.map((item) => item.category)];
+
 const About = () => {
+  // const [portfolioMenu, setPortfolioMenu] = useState(portfolioData);
+  // const [buttons, setButtons] = useState(buttonCategories);
+
+  // // create a filter function that filters out the portfolio category
+  // const filter = (button) => {
+  //   if (button === "All") {
+  //     setPortfolioMenu(portfolioData);
+  //     return;
+  //   }
+  //   const filteredData = portfolioData.filter(
+  //     (item) => item.category === button
+  //   );
+  //   setPortfolioMenu(filteredData);
+  //   setButtons(buttonCategories);
+  // };
   const ref = useRef(null);
   const spinner = useRef(null);
 
@@ -36,7 +54,7 @@ const About = () => {
         <Logo theme="light" />
         <SocialMediaIcons theme="light" />
         <Home />
-
+        {/* <Button buttons={buttons} filter={filter} /> */}
         <Main ref={ref} variants={container} initial="hidden" animate="show">
           {portfolioData.map((item, index) => {
             return <Card key={index} data={item} />;
@@ -48,7 +66,7 @@ const About = () => {
           <ImSpinner9 className="icons" />
         </Rotate>
 
-        <BigTitle text="Projects" top="-3%" right="20%" />
+        <BigTitle text="Projects" top="-3%" right="45%" />
       </Box>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, keyframes } from "styled-components";
-import { darkTheme } from "./Theme";
+import { lightTheme } from "./Theme";
 import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import Home from "../subComponents/Home";
@@ -8,7 +8,7 @@ import spaceman from "../resource/img/taomemoji.png";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 import { mediaQueries } from "../subComponents/mediaQueries";
-// import ToggleMode from "../subComponents/ToggleMode";
+import ToggleMode from "../subComponents/ToggleMode";
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,7 +23,7 @@ const container = {
 
 const About = () => {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Box
         variants={container}
         initial="hidden"
@@ -34,7 +34,7 @@ const About = () => {
         <SocialMediaIcons theme="light" />
         <Home />
         <ParticlesComponent theme="dark" />
-        {/* <ToggleMode /> */}
+        <ToggleMode />
 
         <Spaceman>
           <img src={spaceman} alt="" />
@@ -46,6 +46,8 @@ const About = () => {
           performant and accessible than it was given to me.
           <br />
           <br />
+          {/* <br />
+          <br /> */}
           Aside from coding, I am also passionate about blogging and sharing the
           knowledge I gained with the dev community. I value the expertise to
           contribute to web development performance and help fellow developers
@@ -97,6 +99,7 @@ const Main = styled.div`
   z-index: 3;
   line-height: 1.5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: calc (0.6rem + 1vw);

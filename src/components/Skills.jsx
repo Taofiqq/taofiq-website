@@ -13,6 +13,7 @@ import {
   SiMongodb,
   SiFastify,
   SiExpress,
+  SiGraphql,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { DiCss3 } from "react-icons/di";
@@ -82,14 +83,18 @@ const Skills = () => {
               <span>Tailwind</span>
               <SiTailwindcss />
             </SkillContainer>
+            <SkillContainer>
+              <span>GraphQL</span>
+              <SiGraphql />
+            </SkillContainer>
           </Description>
         </Main>
-        <Main>
+        <Main2>
           <Title>
             <BiLaptop /> Backend
           </Title>
 
-          <Description>
+          <Description2>
             <SkillContainer>
               <span>NodeJS</span>
               <FaNodeJs />
@@ -106,10 +111,15 @@ const Skills = () => {
               <span>ExpressJS</span>
               <SiExpress />
             </SkillContainer>
-          </Description>
-        </Main>
+            <SkillContainer>
+              <span>GraphQL</span>
+              <SiGraphql />
+            </SkillContainer>
+          </Description2>
+        </Main2>
 
-        <BigTitle title="SKILLS" top="10%" leftt="1%" />
+        {/* <BigTitle title="SKILLS" top="4%" leftt="4%" /> */}
+        <BigTitle text="Skills" left="13%" top="-9%" />
       </Box>
     </ThemeProvider>
   );
@@ -123,6 +133,7 @@ const Box = styled(motion.div)`
   justify-content: space-evenly;
   align-items: center;
   background-color: ${(props) => props.theme.body};
+
   ${mediaQueries(50)`
             flex-direction:column;    
             padding:8rem 0;
@@ -134,12 +145,12 @@ height:auto;
 `;
 
 const Main = styled.div`
-  /* border: 2px solid gray; */
+  margin-top: 5rem;
   color: black;
   background-color: white;
-  padding: 2rem;
+  padding: 3rem 2rem;
   width: 30vw;
-  height: 65vh;
+  height: 70vh;
   z-index: 3;
   line-height: 1.5rem;
   display: flex;
@@ -152,6 +163,37 @@ const Main = styled.div`
   &:hover {
     color: white;
     background-color: #222831;
+  }
+
+  ${mediaQueries(60)`
+            height: 55vh;
+  `};
+
+  ${mediaQueries(50)`
+              width: 50vw;
+              height: max-content;
+
+  `};
+`;
+const Main2 = styled.div`
+  margin-top: 5rem;
+  color: white;
+  background-color: #222831;
+  padding: 2.5rem 2rem;
+  width: 30vw;
+  height: 65vh;
+  z-index: 3;
+  line-height: 1.5rem;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 1rem;
+
+  &:hover {
+    color: black;
+    background-color: white;
   }
 
   ${mediaQueries(60)`
@@ -203,9 +245,39 @@ const Title = styled.h2`
 const Description = styled.div`
   color: black;
   font-size: calc (0.6em + 1vw);
-  padding: 0.5rem 0;
+  padding: 0.5rem 2rem;
+
   ${Main}:hover & {
     color: white;
+  }
+
+  ${mediaQueries(50)`
+  font-size: calc(0.8em + 1vw);
+  `};
+
+  ${mediaQueries(30)`
+  font-size:calc(0.7em + 1vw);
+  `};
+
+  ${mediaQueries(25)`font-size:calc(0.5em + 1vw)
+  `};
+
+  strong {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin-left: 2rem;
+  }
+`;
+const Description2 = styled.div`
+  color: white;
+  font-size: calc (0.6em + 1vw);
+  padding: 0.5rem 2rem;
+
+  ${Main2}:hover & {
+    color: black;
   }
 
   ${mediaQueries(50)`

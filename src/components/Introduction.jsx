@@ -25,13 +25,18 @@ const Introduction = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <Hi>Hi, 👋🏿</Hi>
-          <Para1>
-            I'm Taofiq, a freelance Front End Developer based in Malaysia.
-          </Para1>
-          <Para2>
-            I develop and build User Interfaces. Passionate about responsive website design and a firm believer in the mobile-first strategy while building web applications.
-          </Para2>
+          <Hi>
+            Hi👋🏿, I'm Taofiq, a freelance Front End Developer, passionate about
+            bringing web applications designs to life using code. I specializing
+            in building the user interface of the web and creating accesible and
+            exceptional digital experiences for users.
+          </Hi>
+          {/* <Para1></Para1> */}
+          {/* <Para2>
+            I develop and build User Interfaces. Passionate about responsive
+            website design and a firm believer in the mobile-first strategy
+            while building web applications.
+          </Para2> */}
         </Text>
       </BoxContainer>
       <BoxContainer>
@@ -211,15 +216,16 @@ const Text = styled(motion.div)`
 const Hi = styled.h1`
   font-size: 1rem;
   font-weight: 300;
+  line-height: 1.5;
 `;
-const Para1 = styled.h1`
-  font-size: 1rem;
-  font-weight: 300;
-`;
-const Para2 = styled.p`
-  font-size: 1rem;
-  font-weight: 300;
-  color: white;
-`;
+// const Para1 = styled.h1`
+//   font-size: 1rem;
+//   font-weight: 300;
+// `;
+// const Para2 = styled.p`
+//   font-size: 1rem;
+//   font-weight: 300;
+//   color: white;
+// `;
 
 export default Introduction;

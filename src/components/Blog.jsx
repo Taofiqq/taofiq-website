@@ -65,9 +65,9 @@ const MainContainer = styled(motion.div)`
   background-position: center;
 `;
 const Container = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.5)`};
+  background-color: ${(props) => `rgba(${props.theme.textRgba}, 0.4)`};
   width: 100%;
-  height: auto;
+  height: 100vh;
   position: relative;
   padding-bottom: 5rem;
 `;
