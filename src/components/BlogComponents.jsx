@@ -71,6 +71,7 @@ const BlogBox = styled(motion(NavLink))`
     height:14rem;
     padding:0.8rem;
     backdrop-filter: none;
+    margin-left: 2rem;
 
   `};
 `;
@@ -123,6 +124,13 @@ const Hashtags = styled.div`
 `;
 const Hashtag = styled.span`
   padding-right: 0.5rem;
+  ${mediaQueries(25)`
+    
+    font-size:calc(0.5em + 1vw);
+
+
+
+  `};
 `;
 const Date = styled.span`
   padding: 0.5rem 0;

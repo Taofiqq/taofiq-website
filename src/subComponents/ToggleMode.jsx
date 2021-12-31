@@ -52,7 +52,7 @@ const LightModeButton = styled.button`
   ${mediaQueries(40)`
   font-size: .8rem;
   top: 1rem;
-  left: 63%;
+  left: 58%;
   `};
 
   ${mediaQueries(25)`
@@ -63,7 +63,7 @@ const LightModeButton = styled.button`
   ${mediaQueries(20)`
   font-size: .6rem;
   top: .6rem;
-  left: 53%;
+  left: 50%;
   `};
 `;
 
@@ -85,17 +85,17 @@ const DarkModeButton = styled.button`
   ${mediaQueries(40)`
   font-size: .8rem;
   top: 1rem;
-  left: 68%;
+  left: 66%;
   `};
   ${mediaQueries(25)`
   font-size: .8rem;
   top: 1rem;
-  left: 57%;
+  left: 61%;
   `};
   ${mediaQueries(20)`
   font-size: .6rem;
   top: .6rem;
-  left: 59%;
+  left: 60%;
   `};
 `;
 

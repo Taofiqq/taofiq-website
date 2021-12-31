@@ -150,7 +150,7 @@ const Main = styled.div`
   background-color: white;
   padding: 3rem 2rem;
   width: 30vw;
-  height: 70vh;
+  height: auto;
   z-index: 3;
   line-height: 1.5rem;
   display: flex;

@@ -8,7 +8,7 @@ import spaceman from "../resource/img/taomemoji.png";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 import { mediaQueries } from "../subComponents/mediaQueries";
-import ToggleMode from "../subComponents/ToggleMode";
+// import ToggleMode from "../subComponents/ToggleMode";
 
 const container = {
   hidden: { opacity: 0 },
@@ -34,13 +34,16 @@ const About = () => {
         <SocialMediaIcons theme="light" />
         <Home />
         <ParticlesComponent theme="dark" />
-        <ToggleMode />
+        {/* <ToggleMode /> */}
 
         <Spaceman>
           <img src={spaceman} alt="" />
         </Spaceman>
 
-        <Main>
+        <Main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
+        >
           Hello, I am a front end developer, and I create innovative, modern and
           responsive websites. I work on codes I touch to be more readable,
           performant and accessible than it was given to me.
@@ -121,7 +124,8 @@ const Main = styled.div`
   `};
   ${mediaQueries(30)`
           width: 50vw;
-          height: auto;
+          /* height: 30vh; */
+          font-size: 12px;
           backdrop-filter: none;
           margin-top:2rem;
 
@@ -129,7 +133,10 @@ const Main = styled.div`
 
   ${mediaQueries(20)`
           padding: 1rem;
-          font-size: calc(0.5rem + 1vw);
+          /* font-size: calc(0.5rem + 1vw); */
+          font-size: 10px;
+          margin-left: .6rem;
+          
   `};
 `;
 export default About;

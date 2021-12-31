@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./Theme";
 import blogImg from "../resource/img/blog.jpeg";
@@ -7,7 +7,7 @@ import Logo from "../subComponents/Logo";
 import SocialMediaIcons from "../subComponents/SocialMediaIcons";
 import { Blogs } from "../data/BlogData";
 import BlogComponent from "./BlogComponents";
-import AnchorComponent from "./Anchor";
+// import AnchorComponent from "./Anchor";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
 import { mediaQueries } from "../subComponents/mediaQueries";
@@ -23,12 +23,12 @@ const container = {
 };
 
 const Blog = () => {
-  const [numbers, setNumbers] = useState(0);
+  // const [numbers, setNumbers] = useState(0);
 
-  useEffect(() => {
-    let num = (window.innerHeight - 70) / 30;
-    setNumbers(parseInt(num));
-  }, []);
+  // useEffect(() => {
+  //   let num = (window.innerHeight - 70) / 30;
+  //   setNumbers(parseInt(num));
+  // }, []);
   return (
     <ThemeProvider theme={darkTheme}>
       <MainContainer
@@ -41,7 +41,7 @@ const Blog = () => {
           <Logo />
           <HomeButton />
           <SocialMediaIcons theme="light" />
-          <AnchorComponent numbers={numbers} />
+          {/* <AnchorComponent numbers={numbers} /> */}
           <Center>
             <Grid>
               {Blogs.map((blog) => {
