@@ -47,7 +47,7 @@ const Main = () => {
 
           <Center click={click}>
             <ImSpinner9 className="icon" onClick={() => handleClick()} />
-            <span>Quick Intro? </span>
+            <span>Quick Intro? Click Here </span>
           </Center>
 
           <Contact
